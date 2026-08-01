@@ -17,6 +17,11 @@
       <p class="eyebrow">Happy Girlfriend's Day</p>
       <h1>For Fidelis Muthoni</h1>
       <p class="subtitle">The girl whose name means faithful, loyal, and true — and whose heart made ordinary school days feel unforgettable.</p>
+      <div class="hero-photo" role="img" aria-label="A framed favourite photo of Fidelis"></div>
+      <div class="hero-actions">
+        <a class="button" href="#story">Begin our story ❤️</a>
+        <a class="button ghost" href="#love-test">Take the love test</a>
+      </div>
       <a class="button" href="#story">Begin our story ❤️</a>
     </section>
 
@@ -42,6 +47,77 @@
         <article><span>🌙</span><h3>Loyal</h3><p>A presence that feels safe.</p></article>
         <article><span>✨</span><h3>True</h3><p>A love that feels honest.</p></article>
       </div>
+    </section>
+
+    <section class="panel gallery-panel">
+      <p class="eyebrow">Our pictures</p>
+      <h2>Moments I never want to forget</h2>
+      <div class="photo-gallery">
+        <figure class="photo-tile tall">
+          <img src="photos/fidelis-selfie.jpg" alt="Fidelis smiling in a soft selfie" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>That beautiful smile that makes my day softer.</figcaption>
+        </figure>
+        <figure class="photo-tile wide">
+          <img src="photos/cultural-day-walk.jpg" alt="Fidelis walking during Cultural Day at school" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>Cultural Day — walking in blue, looking unforgettable.</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img src="photos/blue-dress-smile.jpg" alt="Fidelis in a blue dress smiling with a friend" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>The blue dress, the smile, the whole moment.</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img src="photos/pizza-date.jpg" alt="Fidelis smiling at a pizza date" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>Pizza, laughter, and you being my favourite view.</figcaption>
+        </figure>
+        <figure class="photo-tile wide">
+          <img src="photos/school-hug.jpg" alt="A warm school hug" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>The kind of hug that feels like home.</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img src="photos/blue-uniforms.jpg" alt="Fidelis and Eustace smiling in blue school sweaters" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>Besties, matching blues, and a memory I keep close.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="love-test" class="panel quiz-panel">
+      <p class="eyebrow">A little test</p>
+      <h2>How well do you know our story?</h2>
+      <p class="quiz-intro">Answer these tiny memories. Every correct answer unlocks a sweeter note.</p>
+      <div id="quiz" class="quiz-card" aria-live="polite">
+        <div class="quiz-topline">
+          <span id="quizStep">Question 1 of 5</span>
+          <span id="quizScore">0 memories unlocked</span>
+        </div>
+        <h3 id="questionText"></h3>
+        <div id="answerButtons" class="answer-grid"></div>
+        <p id="quizFeedback" class="quiz-feedback"></p>
+      </div>
+    </section>
+
+    <section class="panel wrapped-panel">
+      <p class="eyebrow">Our relationship wrapped</p>
+      <h2>Little numbers, big feelings</h2>
+      <div class="wrapped-grid">
+        <article><strong>February 4, 2023</strong><span>The day I knew you</span></article>
+        <article><strong>April 2023</strong><span>The month we began</span></article>
+        <article><strong>History</strong><span>The class where we made our own</span></article>
+        <article><strong>Always</strong><span>The answer I hope you choose</span></article>
+      </div>
+    </section>
+
+    <section class="panel gift-panel">
+      <p class="eyebrow">Tap-to-open gifts</p>
+      <h2>Six tiny gifts for you</h2>
+      <div class="gift-grid">
+        <button class="gift" data-message="Gift 1: A promise — I will keep choosing you with patience, honesty, and love.">🎁<span>A promise</span></button>
+        <button class="gift" data-message="Gift 2: A memory — the first hello at Camp Brethren still means everything to me.">🎁<span>A memory</span></button>
+        <button class="gift" data-message="Gift 3: A compliment — your smile can change my whole day.">🎁<span>A compliment</span></button>
+        <button class="gift" data-message="Gift 4: A date idea — pizza, soft music, and a walk where we talk about our future.">🎁<span>A date idea</span></button>
+        <button class="gift" data-message="Gift 5: A reason — you make love feel like friendship, peace, and home.">🎁<span>A reason</span></button>
+        <button class="gift" data-message="Gift 6: A wish — may we keep growing, laughing, and building our story one memory at a time.">🎁<span>A wish</span></button>
+      </div>
+      <p id="giftMessage" class="gift-message">Tap any gift box.</p>
     </section>
 
     <section class="panel timeline">
