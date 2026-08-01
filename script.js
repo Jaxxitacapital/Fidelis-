@@ -121,6 +121,7 @@ document.querySelectorAll('.gift').forEach((gift) => {
   });
 });
 
+setInterval(floatingHeart, 650);
 surprise.addEventListener('click', () => {
   surpriseText.classList.add('show');
   launchConfetti();
