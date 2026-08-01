@@ -3,141 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Fidelis Muthoni ❤️</title>
+  <title>♾️ To the Girl I Choose Every Day</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800;900&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="wrapped-body locked">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true"></div>
   <div class="hearts" aria-hidden="true"></div>
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
 
-  <main>
-    <section class="hero panel">
-      <p class="eyebrow">Happy Girlfriend's Day</p>
-      <h1>For Fidelis Muthoni</h1>
-      <p class="subtitle">The girl whose name means faithful, loyal, and true — and whose heart made ordinary school days feel unforgettable.</p>
-      <div class="hero-photo" role="img" aria-label="A framed favourite photo of Fidelis"></div>
-      <div class="hero-actions">
-        <a class="button" href="#story">Begin our story ❤️</a>
-        <a class="button ghost" href="test.html">Take the 30-mark love test</a>
-        <a class="button ghost" href="letter.html">Read the love letter</a>
-      </div>
+  <section id="loginScreen" class="login-screen" aria-labelledby="loginTitle">
+    <div class="login-card">
+      <span class="infinity-mark">♾️</span>
+      <p class="eyebrow">Fidelis private system</p>
+      <h1 id="loginTitle">To the Girl I Choose Every Day</h1>
+      <p>Enter the password to unlock your Spotify Wrapped-style love story.</p>
+      <form id="loginForm" class="login-form">
+        <label for="passwordInput">Password</label>
+        <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Hint: your name" required />
+        <button class="button spotify-button" type="submit">Unlock Wrapped</button>
+      </form>
+      <p id="loginError" class="login-error" role="alert"></p>
+    </div>
+  </section>
+
+  <section id="loadingScreen" class="loading-screen hidden-screen" aria-live="polite">
+    <div class="loader-card">
+      <span class="infinity-mark">♾️</span>
+      <h2>Loading your Wrapped...</h2>
+      <div class="loading-bar"><span id="loadingProgressBar"></span></div>
+      <strong id="loadingPercent">0%</strong>
+      <p>Preparing memories, stars, and one forever playlist.</p>
+    </div>
+  </section>
+
+  <main id="wrappedExperience" class="wrapped-experience hidden-screen">
+    <nav class="top-nav panel mini-panel wrapped-nav" aria-label="Site pages">
+      <a href="index.html" aria-current="page">Wrapped</a><a href="test.html">Love test</a><a href="letter.html">Love letter</a><a href="checkout.html">Checkout</a>
+    </nav>
+
+    <section class="wrapped-slide landing-slide active-slide">
+      <div class="vinyl" aria-hidden="true"><span></span></div>
+      <span class="infinity-mark">♾️</span>
+      <p class="eyebrow">Fidelis ❤️</p>
+      <h1>To the Girl I Choose Every Day</h1>
+      <p class="tagline">Not because I have to. Not because it's easy. Simply because, every single day, I'd choose you again.</p>
+      <button class="button spotify-button next-slide" type="button">Swipe to begin →</button>
     </section>
 
-    <section id="story" class="panel split">
-      <div>
-        <p class="eyebrow">February 4, 2023</p>
-        <h2>The day I knew you</h2>
-        <p>I joined Camp Brethren High School in January, but on February 4, 2023, something changed. I said hello, you clicked, we vibed, and somehow a simple moment became the beginning of my favourite story.</p>
-      </div>
-      <div class="memory-card">
-        <span>📍</span>
-        <strong>Camp Brethren High School</strong>
-        <p>Form 3. History class. Besties first. Then April came, I asked you, and we began.</p>
-      </div>
-    </section>
-
-    <section class="panel">
-      <p class="eyebrow">What Fidelis means</p>
-      <h2>Faithful. Loyal. True.</h2>
-      <p>Fidelis comes from Latin and means faithful, loyal, sincere, and dependable. That meaning fits you beautifully: steady, rare, and real.</p>
-      <div class="meaning-grid">
-        <article><span>🤍</span><h3>Faithful</h3><p>A heart that stays genuine.</p></article>
-        <article><span>🌙</span><h3>Loyal</h3><p>A presence that feels safe.</p></article>
-        <article><span>✨</span><h3>True</h3><p>A love that feels honest.</p></article>
-      </div>
-    </section>
-
-    <section class="panel gallery-panel">
-      <p class="eyebrow">Our pictures</p>
-      <h2>Moments I never want to forget</h2>
-      <div class="photo-gallery">
-        <figure class="photo-tile tall">
-          <img src="photos/fidelis-selfie.jpg" alt="Fidelis smiling in a soft selfie" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
-          <figcaption>That beautiful smile that makes my day softer.</figcaption>
-        </figure>
-        <figure class="photo-tile wide">
-          <img src="photos/cultural-day-walk.jpg" alt="Fidelis walking during Cultural Day at school" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
-          <figcaption>Cultural Day — walking in blue, looking unforgettable.</figcaption>
-        </figure>
-        <figure class="photo-tile">
-          <img src="photos/blue-dress-smile.jpg" alt="Fidelis in a blue dress smiling with a friend" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
-          <figcaption>The blue dress, the smile, the whole moment.</figcaption>
-        </figure>
-        <figure class="photo-tile">
-          <img src="photos/pizza-date.jpg" alt="Fidelis smiling at a pizza date" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
-          <figcaption>Pizza, laughter, and you being my favourite view.</figcaption>
-        </figure>
-        <figure class="photo-tile wide">
-          <img src="photos/school-hug.jpg" alt="A warm school hug" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
-          <figcaption>The kind of hug that feels like home.</figcaption>
-        </figure>
-        <figure class="photo-tile">
-          <img src="photos/blue-uniforms.jpg" alt="Fidelis and Eustace smiling in blue school sweaters" loading="lazy" onerror="this.parentElement.classList.add('missing')" />
-          <figcaption>Besties, matching blues, and a memory I keep close.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="love-test" class="panel quiz-panel">
-      <p class="eyebrow">30 marks • $0.01 each</p>
-      <h2>A smarter love test</h2>
-      <p class="quiz-intro">This is not multiple choice anymore. Type your answers, let the page reason through them, then continue to an M-Pesa checkout total based on your score.</p>
-      <div class="hero-actions">
-        <a class="button" href="test.html">Start the typed test</a>
-        <a class="button ghost" href="checkout.html">View checkout</a>
-      </div>
-    </section>
-
-    <section class="panel wrapped-panel">
-      <p class="eyebrow">Our relationship wrapped</p>
-      <h2>Little numbers, big feelings</h2>
-      <div class="wrapped-grid">
-        <article><strong>February 4, 2023</strong><span>The day I knew you</span></article>
-        <article><strong>April 2023</strong><span>The month we began</span></article>
-        <article><strong>History</strong><span>The class where we made our own</span></article>
-        <article><strong>Always</strong><span>The answer I hope you choose</span></article>
-      </div>
-    </section>
-
-    <section class="panel gift-panel">
-      <p class="eyebrow">Tap-to-open gifts</p>
-      <h2>Six tiny gifts for you</h2>
-      <div class="gift-grid">
-        <button class="gift" data-message="Gift 1: A promise — I will keep choosing you with patience, honesty, and love.">🎁<span>A promise</span></button>
-        <button class="gift" data-message="Gift 2: A memory — the first hello at Camp Brethren still means everything to me.">🎁<span>A memory</span></button>
-        <button class="gift" data-message="Gift 3: A compliment — your smile can change my whole day.">🎁<span>A compliment</span></button>
-        <button class="gift" data-message="Gift 4: A date idea — pizza, soft music, and a walk where we talk about our future.">🎁<span>A date idea</span></button>
-        <button class="gift" data-message="Gift 5: A reason — you make love feel like friendship, peace, and home.">🎁<span>A reason</span></button>
-        <button class="gift" data-message="Gift 6: A wish — may we keep growing, laughing, and building our story one memory at a time.">🎁<span>A wish</span></button>
-      </div>
-      <p id="giftMessage" class="gift-message">Tap any gift box.</p>
-    </section>
-
-    <section class="panel timeline">
-      <p class="eyebrow">Our little timeline</p>
-      <h2>From hello to everything</h2>
-      <div class="timeline-list">
-        <article><time>January 2023</time><p>I joined Form 3 at Camp Brethren High School.</p></article>
-        <article><time>February 4, 2023</time><p>I met you, said hello, and we clicked in a way I still remember.</p></article>
-        <article><time>History class</time><p>We built our own kind of history while studying history together.</p></article>
-        <article><time>April 2023</time><p>I asked you, and our best-friend story became something even sweeter.</p></article>
-      </div>
-    </section>
-
-    <section class="panel letter">
-      <p class="eyebrow">A letter for you</p>
+    <section class="wrapped-slide">
+      <p class="eyebrow">Your 2026 Wrapped</p>
       <h2>Dear Fidelis,</h2>
-      <p>You were 15 when I first knew you, and even then there was something about you that felt easy, warm, and different. You became my bestie, my peace, my person to laugh with, and the girl I wanted beside me.</p>
-      <p>I made this because flowers fade and chocolates disappear, but I wanted you to have something that lasts — a little corner of the internet with your name on it.</p>
-      <p class="signature">Forever yours,<br>Eustace ❤️</p>
+      <p>Spotify Wrapped celebrates the music people couldn't stop listening to.</p>
+      <p>This one celebrates the person I couldn't stop choosing.</p>
+      <strong class="heartbeat">You.</strong>
     </section>
 
-    <section class="panel final">
-      <h2>Will you keep making memories with me?</h2>
-      <button id="surprise" class="button">Always ❤️</button>
-      <p id="surpriseText" class="hidden">Happy Girlfriend's Day, Fidelis. Thank you for being faithful, beautiful, funny, and unforgettable. I love you.</p>
+    <section class="wrapped-slide stat-slide">
+      <p class="eyebrow">Days</p>
+      <strong class="mega-number">365</strong>
+      <h2>I would still choose you all over again.</h2>
+      <p>No skips. No shuffle. Only you.</p>
+    </section>
+
+    <section class="wrapped-slide">
+      <p class="eyebrow">Top Artist</p>
+      <h2>❤️ Fidelis</h2>
+      <div class="spotify-card">
+        <p>Listeners: <strong>1</strong></p>
+        <p>Top listener: <strong>0.0001%</strong></p>
+        <p>Longest streak: <strong>Every day.</strong></p>
+        <div class="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="wrapped-slide music-slide">
+      <p class="eyebrow">Top Song</p>
+      <h2>Perfect</h2>
+      <p>Artist: Us</p>
+      <div class="album-art hero-photo" role="img" aria-label="Favourite photo album art"></div>
+      <div class="progress-line"><span></span></div>
+      <p>03:56 • Currently playing: Our Story</p>
+    </section>
+
+    <section class="wrapped-slide habits-slide">
+      <p class="eyebrow">Listening Habits</p>
+      <h2>All day, every day</h2>
+      <div class="habit-grid">
+        <article><strong>Morning</strong><span>Thinking about you</span></article>
+        <article><strong>Afternoon</strong><span>Wondering if you've eaten.</span></article>
+        <article><strong>Night</strong><span>Missing you.</span></article>
+        <article><strong>Late Night</strong><span>Dreaming about our future.</span></article>
+      </div>
+    </section>
+
+    <section class="wrapped-slide memories-slide">
+      <p class="eyebrow">Most Played Memories</p>
+      <h2>The moments on repeat</h2>
+      <div class="memory-flips">
+        <article>❤️<span>First Conversation</span></article>
+        <article>❤️<span>First Laugh</span></article>
+        <article>❤️<span>First Time I Missed You</span></article>
+        <article>❤️<span>Every Little Moment</span></article>
+      </div>
+    </section>
+
+    <section class="wrapped-slide emotions-slide">
+      <p class="eyebrow">Top Emotions</p>
+      <h2>How my heart played 2026</h2>
+      <div class="emotion-bars">
+        <label>Love <span style="--w:98%"></span><b>98%</b></label>
+        <label>Joy <span style="--w:86%"></span><b>86%</b></label>
+        <label>Excitement <span style="--w:78%"></span><b>78%</b></label>
+        <label>Missing You <span style="--w:72%"></span><b>72%</b></label>
+        <label>Butterflies <span style="--w:92%"></span><b>92%</b></label>
+      </div>
+    </section>
+
+    <section class="wrapped-slide achievements-slide">
+      <p class="eyebrow">Achievements</p>
+      <h2>Unlocked by Fidelis</h2>
+      <div class="achievement-grid">
+        <span>🏆 Best Smile</span><span>🏆 Safest Place</span><span>🏆 Favorite Human</span><span>🏆 Forever Playlist</span><span>🏆 Home</span>
+      </div>
+    </section>
+
+    <section class="wrapped-slide streak-slide">
+      <p class="eyebrow">Listening Streak</p>
+      <strong class="flame">🔥</strong>
+      <h2>Current Streak: ∞ Days</h2>
+      <p>Broken? Never.</p>
+    </section>
+
+    <section class="wrapped-slide quote-slide">
+      <p class="eyebrow">Favorite Quote</p>
+      <blockquote>“If life gave me another beginning, I'd still find my way back to you.”</blockquote>
+    </section>
+
+    <section class="wrapped-slide playlist-slide">
+      <p class="eyebrow">Playlist</p>
+      <h2>♾️ To the Girl I Choose Every Day</h2>
+      <p>The song is here now — the other video was a message, this one is the soundtrack.</p>
+      <div class="video-frame spotify-frame">
+        <iframe src="https://www.youtube.com/embed/UjnDpcgJXvA" title="4 Feet Apart song for Fidelis" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="wrapped-slide secret-slide">
+      <p class="eyebrow">Secret Message</p>
+      <h2>Tap to reveal</h2>
+      <button id="secretReveal" class="button spotify-button" type="button">Reveal message</button>
+      <p id="secretMessage" class="hidden">Every playlist eventually ends. Every song fades. But choosing you isn't a playlist. It's a decision I'll happily make every single day.</p>
+    </section>
+
+    <section class="wrapped-slide final-wrapped-slide">
+      <p class="eyebrow">The Ending</p>
+      <h2>Thanks for being my favorite song.</h2>
+      <p>Happy Girlfriend's Day</p>
+      <strong>❤️ Fidelis</strong>
+      <button id="surprise" class="button spotify-button" type="button">Final fireworks</button>
+      <p id="surpriseText" class="hidden">I choose you today, tomorrow, and every day after.</p>
     </section>
   </main>
 
