@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30-Mark Love Test • Fidelis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+  <main>
+    <nav class="top-nav panel mini-panel" aria-label="Site pages">
+      <a href="index.html">Story</a>
+      <a href="test.html" aria-current="page">Love test</a>
+      <a href="letter.html">Love letter</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+    <section id="love-test" class="panel quiz-panel">
+      <p class="eyebrow">Typed answers • 30 marks • $0.01 per mark</p>
+      <h1>Fidelis Love Test</h1>
+      <p class="quiz-intro">Thirty fun questions that are not too obvious. Type each answer and the page checks it against real memories, accepts close wording, explains its reasoning, and prices the checkout total from your marks.</p>
+      <div id="quiz" class="quiz-card" aria-live="polite">
+        <div class="quiz-topline">
+          <span id="quizStep">Question 1 of 30</span>
+          <span id="quizScore">0/30 marks • $0.00</span>
+        </div>
+        <h3 id="questionText"></h3>
+        <form id="answerForm" class="typed-answer">
+          <label for="typedAnswer">Your typed answer</label>
+          <input id="typedAnswer" name="answer" type="text" autocomplete="off" placeholder="Type what you truly remember..." required />
+          <button class="button" type="submit">Check answer</button>
+        </form>
+        <p id="quizFeedback" class="quiz-feedback"></p>
+      </div>
+    </section>
+    <section class="panel checkout-preview">
+      <p class="eyebrow">Live checkout preview</p>
+      <h2>Your total so far</h2>
+      <div class="price-card"><strong id="summaryScore">0/30</strong><span id="summaryAmount">$0.00</span></div>
+      <a id="checkoutLink" class="button" href="checkout.html">Continue to M-Pesa checkout</a>
+      <ol id="reasoningList" class="reasoning-list" aria-label="Answer reasoning"></ol>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

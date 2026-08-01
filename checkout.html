@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M-Pesa Checkout • Fidelis Love Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+  <main>
+    <nav class="top-nav panel mini-panel" aria-label="Site pages">
+      <a href="index.html">Story</a><a href="test.html">Love test</a><a href="letter.html">Love letter</a><a href="checkout.html" aria-current="page">Checkout</a>
+    </nav>
+    <section class="panel checkout-panel">
+      <p class="eyebrow">M-Pesa checkout</p>
+      <h1>Score-to-love checkout</h1>
+      <p>Each correct typed answer is worth $0.01. Your saved score is <strong id="checkoutScore">0/30</strong>, so the total is <strong id="checkoutAmount">$0.00</strong>.</p>
+      <form id="mpesaForm" class="mpesa-card">
+        <label for="mpesaPhone">M-Pesa phone number</label>
+        <input id="mpesaPhone" name="phone" type="tel" placeholder="2547XXXXXXXX" pattern="[0-9+ ]{10,15}" required />
+        <div class="price-card"><span>Amount due</span><strong id="mpesaAmount">$0.00</strong></div>
+        <button class="button" type="submit">Prepare M-Pesa STK Push</button>
+      </form>
+      <p id="mpesaMessage" class="quiz-feedback">This front-end prepares the checkout details. A real Daraja/M-Pesa backend can use the score and phone number to send the actual STK Push.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
