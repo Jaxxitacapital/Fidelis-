@@ -184,3 +184,91 @@ if (mpesaForm) {
     mpesaMessage.textContent = `Checkout request prepared for ${phone}. Connect this page to an M-Pesa STK Push backend to collect $${(Number(localStorage.getItem('fidelisScore') || 0) * PRICE_PER_MARK).toFixed(2)} for the love-test score.`;
   });
 }
+
+const loginScreen = document.querySelector('#loginScreen');
+const loadingScreen = document.querySelector('#loadingScreen');
+const wrappedExperience = document.querySelector('#wrappedExperience');
+const loginForm = document.querySelector('#loginForm');
+const passwordInput = document.querySelector('#passwordInput');
+const loginError = document.querySelector('#loginError');
+const loadingPercent = document.querySelector('#loadingPercent');
+const loadingProgressBar = document.querySelector('#loadingProgressBar');
+const cursorGlow = document.querySelector('#cursorGlow');
+const secretReveal = document.querySelector('#secretReveal');
+const secretMessage = document.querySelector('#secretMessage');
+const loadingStops = [0, 15, 40, 76, 100];
+
+function unlockWrappedExperience() {
+  if (!loginScreen || !loadingScreen || !wrappedExperience) return;
+  loginScreen.classList.add('hidden-screen');
+  loadingScreen.classList.remove('hidden-screen');
+  let index = 0;
+  const timer = setInterval(() => {
+    const value = loadingStops[index];
+    if (loadingPercent) loadingPercent.textContent = `${value}%`;
+    if (loadingProgressBar) loadingProgressBar.style.width = `${value}%`;
+    index += 1;
+    if (index >= loadingStops.length) {
+      clearInterval(timer);
+      setTimeout(() => {
+        loadingScreen.classList.add('hidden-screen');
+        wrappedExperience.classList.remove('hidden-screen');
+        document.body.classList.remove('locked');
+        launchConfetti();
+      }, 520);
+    }
+  }, 430);
+}
+
+if (loginForm) {
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const password = normalizeAnswer(passwordInput.value);
+    if (password === 'fidelis') {
+      localStorage.setItem('fidelisWrappedUnlocked', 'true');
+      unlockWrappedExperience();
+    } else if (loginError) {
+      loginError.textContent = 'Wrong password. Try “fidelis”.';
+    }
+  });
+
+  if (localStorage.getItem('fidelisWrappedUnlocked') === 'true') {
+    loginScreen.classList.add('hidden-screen');
+    wrappedExperience.classList.remove('hidden-screen');
+    document.body.classList.remove('locked');
+  }
+}
+
+if (cursorGlow) {
+  window.addEventListener('pointermove', (event) => {
+    cursorGlow.style.left = `${event.clientX}px`;
+    cursorGlow.style.top = `${event.clientY}px`;
+    cursorGlow.style.opacity = '1';
+  });
+}
+
+document.querySelectorAll('.next-slide').forEach((button) => {
+  button.addEventListener('click', () => {
+    const next = button.closest('.wrapped-slide')?.nextElementSibling;
+    if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+document.querySelectorAll('.wrapped-slide').forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
+    card.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+  });
+  card.addEventListener('pointerleave', () => {
+    card.style.transform = '';
+  });
+});
+
+if (secretReveal && secretMessage) {
+  secretReveal.addEventListener('click', () => {
+    secretMessage.classList.add('show');
+    launchConfetti();
+  });
+}
