@@ -18,7 +18,7 @@ const mpesaForm = document.querySelector('#mpesaForm');
 const mpesaMessage = document.querySelector('#mpesaMessage');
 const giftMessage = document.querySelector('#giftMessage');
 
-const PRICE_PER_MARK = 0.01;
+const PRICE_PER_MARK = 0.5;
 const TOTAL_MARKS = 30;
 const quizQuestions = [
   { question: 'What school made our first hello possible?', answers: ['camp brethren high school', 'camp brethren'], clue: 'Think of the school named in our story.', note: 'Right — Camp Brethren High School is where the story opened.' },
