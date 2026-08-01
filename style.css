@@ -269,3 +269,84 @@ time { color: var(--blush); font-weight: 800; }
   .answer-grid, .wrapped-grid, .gift-grid { grid-template-columns: 1fr; }
   .quiz-topline { flex-direction: column; }
 }
+
+.top-nav.mini-panel {
+  min-height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 999px;
+}
+.top-nav a {
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+}
+.top-nav a[aria-current="page"], .top-nav a:hover { background: rgba(255,255,255,.24); }
+.typed-answer, .mpesa-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+.typed-answer label, .mpesa-card label {
+  color: var(--blush);
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.typed-answer input, .mpesa-card input {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 22px;
+  padding: 18px 20px;
+  color: white;
+  background: rgba(0,0,0,.22);
+  font: inherit;
+  outline: none;
+}
+.typed-answer input:focus, .mpesa-card input:focus {
+  border-color: var(--blush);
+  box-shadow: 0 0 0 4px rgba(255,182,193,.16);
+}
+.checkout-preview, .checkout-panel { min-height: auto; }
+.price-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.price-card strong, .price-card span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 1;
+  color: white;
+}
+.reasoning-list {
+  display: grid;
+  gap: 12px;
+  max-height: 360px;
+  overflow: auto;
+  padding-left: 24px;
+}
+.reasoning-list li {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.86);
+  line-height: 1.6;
+}
+.full-letter { min-height: auto; }
+.disabled { pointer-events: none; opacity: .62; }
+
+@media (max-width: 760px) {
+  .top-nav.mini-panel { border-radius: 24px; }
+  .price-card { align-items: flex-start; flex-direction: column; }
+}
